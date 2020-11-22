@@ -1,0 +1,15 @@
+<template>
+	<div :class="styles.container">
+		<Message tag="H3" :text="text" />
+
+		<ol :class="styles.list">
+			<li v-for="id in repositories_ids" :key="id">
+				<Repository :id="id" />
+			</li>
+		</ol>
+
+		<Pagination />
+	</div>
+</template>
+
+<script src="./Results.ts" lang="ts"></script>
