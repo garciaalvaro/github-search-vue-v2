@@ -1,6 +1,8 @@
 import Vue from "vue";
 
 import "./_reset.styl";
+import "./_colors.styl";
+import "./_layout.styl";
 import { Heading } from "../Heading";
 import { Keywords } from "../Keywords";
 import { Languages } from "../Languages";

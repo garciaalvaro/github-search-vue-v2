@@ -1,5 +1,8 @@
 <template>
-	<nav :class="styles.pagination">
+	<nav
+		v-if="repositories_found <= results_per_page"
+		:class="styles.pagination"
+	>
 		<span>Page {{ page }}</span>
 
 		<button

@@ -1,5 +1,5 @@
 <template>
-	<div :class="styles.container">
+	<div v-if="repositories_ids.length" :class="styles.container">
 		<Message tag="H3" :text="text" />
 
 		<ol :class="styles.list">

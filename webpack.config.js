@@ -30,7 +30,7 @@ module.exports = (env, { mode }) => {
 			rules: [
 				// Vue files
 				{
-					test: /\.vue?$/,
+					test: /\.vue$/,
 					exclude: /node_modules/,
 					loader: "vue-loader",
 				},

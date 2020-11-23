@@ -1,5 +1,5 @@
 <template>
-	<div :class="styles.container">
+	<div v-if="text">
 		<Message :text="text" />
 	</div>
 </template>

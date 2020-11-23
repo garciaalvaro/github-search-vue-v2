@@ -1,5 +1,5 @@
 <template>
-	<div :class="styles.container">
+	<div :class="[styles.container, 'theme-dark']">
 		<div :class="styles.content">
 			<label :for="styles.input" :class="styles.label">Search</label>
 
