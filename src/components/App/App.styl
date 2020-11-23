@@ -7,6 +7,10 @@
 	padding 4rem
 	width 100%
 	max-width 50rem
+	overflow-x hidden
+
+	@media screen and (max-width: 600px)
+		padding 3rem
 
 .filters
 	padding 2rem 0
@@ -18,3 +22,6 @@
 
 	> div
 		min-width 0
+
+	@media screen and (max-width: 600px)
+		grid-template-columns 1fr 1fr
