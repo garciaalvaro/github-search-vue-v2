@@ -4,7 +4,7 @@
 	"description": "Small app to search GitHub repositories",
 	"scripts": {
 		"start": "npm run dev",
-		"prebuild": "npm run clean:dist && npm run test:types && npm run test:unit",
+		"prebuild": "npm run clean:dist && npm run test:types",
 		"build": "webpack --mode=production",
 		"clean:dist": "rm -rf dist",
 		"predev": "npm run clean:dist",
@@ -14,7 +14,8 @@
 		"test:lint": "eslint \"**/*.{js,ts,vue}\"",
 		"test:prettier": "prettier --check \"**/*.{js,ts,vue,json,html}\"",
 		"prettier": "prettier --write \"**/*.{js,ts,vue,json,html}\"",
-		"test:unit": "jest --watch",
+		"test:unit": "jest",
+		"test:unit:watch": "jest --watch",
 		"docker": "docker-compose up -d",
 		"docker:recreate": "docker-compose down && docker-compose build --no-cache && docker-compose up",
 		"docker:start": "npm run build && npm run serve:docker",
