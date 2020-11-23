@@ -3,4 +3,46 @@
  */
 
 .container
+	padding 2em
+	margin 0 -2em
+	border-radius .15em
+	transition background-color .1s var(--ease)
+
+	&:hover
+		background-color var(--color_01)
+
+.body
+	margin .7em 0
+
+.stars
 	display flex
+	align-items center
+
+	svg
+		width 1em
+		margin-right .15em
+
+	~ span:before
+		content "|"
+		margin-right .7em
+		color var(--color_02)
+
+.license:empty
+.language:empty
+.updated:empty
+	display none
+
+.license
+.language
+.stars
+	margin-right .7em
+
+.license
+.language
+.updated
+.stars
+	font-size .9em
+
+.footer
+	display flex
+	flex-wrap wrap
