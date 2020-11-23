@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { store } from "@/store";
 import IconSearch from "./IconSearch.vue";
 import styles from "./Keywords.styl";
 
@@ -8,12 +9,12 @@ interface Data {
 }
 
 interface Methods {
-	fetchRespositories: () => void;
-	updateKeywords: () => void;
+	fetchRepositories: () => void;
+	updateKeywords: (value: string) => void;
 }
 
 interface Computed {
-	keywords: string;
+	keywords: State["keywords"];
 }
 
 export default Vue.extend<Data, Methods, Computed, unknown>({
@@ -29,18 +30,22 @@ export default Vue.extend<Data, Methods, Computed, unknown>({
 
 	computed: {
 		keywords() {
-			// TODO
-			return "";
+			const keywords = store.state.keywords;
+
+			return keywords;
 		},
 	},
 
 	methods: {
-		fetchRespositories() {
-			// TODO
+		fetchRepositories() {
+			if (this.keywords.length < 3 || store.state.status === "NO_RESULTS")
+				return;
+
+			store.actions.fetchRepositories();
 		},
 
-		updateKeywords() {
-			// TODO
+		updateKeywords(value) {
+			store.state.keywords = value;
 		},
 	},
 });

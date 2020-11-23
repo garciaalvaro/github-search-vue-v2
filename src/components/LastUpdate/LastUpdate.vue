@@ -6,7 +6,7 @@
 			:id="styles.select"
 			:class="styles.select"
 			:value="last_update || ''"
-			@change="updateLastUpdate"
+			@change="e => updateLastUpdate(e.target.value)"
 		>
 			<option value="">Any time</option>
 			<option value="last_week">Last week</option>

@@ -1,5 +1,7 @@
 import Vue from "vue";
 
+import { store } from "@/store";
+import { getTextFromStatus } from "@/utils";
 import { Message } from "../Message";
 
 interface Computed {
@@ -13,8 +15,9 @@ export default Vue.extend<unknown, unknown, Computed, unknown>({
 
 	computed: {
 		text() {
-			// TODO
-			return "";
+			const text = getTextFromStatus(store.state.status);
+
+			return text;
 		},
 	},
 });

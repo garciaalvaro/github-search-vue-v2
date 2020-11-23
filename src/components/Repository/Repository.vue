@@ -2,26 +2,28 @@
 	<article :class="styles.container">
 		<header>
 			<h4>
-				<a :href="url" :class="styles.link">{{ title }}</a>
+				<a :href="repository.url" :class="styles.link">{{
+					`${repository.user} / ${repository.name}`
+				}}</a>
 			</h4>
 		</header>
 
 		<section :class="styles.body">
-			<p>{{ description }}</p>
+			<p>{{ repository.description }}</p>
 		</section>
 
 		<footer :class="styles.footer">
 			<div :class="styles.stars">
 				<IconStar />
 
-				<span>{{ stars }}</span>
+				<span>{{ repository.stars }}</span>
 			</div>
 
-			<span :class="styles.language">{{ language }}</span>
+			<span :class="styles.language">{{ repository.language }}</span>
 
-			<span :class="styles.license">{{ license }}</span>
+			<span :class="styles.license">{{ repository.license }}</span>
 
-			<span :class="styles.updated">{{ updated }}</span>
+			<span :class="styles.updated">{{ repository.updated }}</span>
 		</footer>
 	</article>
 </template>

@@ -6,7 +6,7 @@
 			:id="styles.select"
 			:class="styles.select"
 			:value="min_stars || ''"
-			@change="updateMinStars"
+			@change="e => updateMinStars(e.target.value)"
 		>
 			<option value="">Any amount</option>
 

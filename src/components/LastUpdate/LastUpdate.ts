@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { store } from "@/store";
 import styles from "./LastUpdate.styl";
 
 interface Data {
@@ -7,11 +8,11 @@ interface Data {
 }
 
 interface Computed {
-	last_update: LastUpdate | null;
+	last_update: State["last_update"];
 }
 
 interface Methods {
-	updateLastUpdate: () => void;
+	updateLastUpdate: (value: LastUpdate) => void;
 }
 
 export default Vue.extend<Data, Methods, Computed, unknown>({
@@ -25,14 +26,15 @@ export default Vue.extend<Data, Methods, Computed, unknown>({
 
 	computed: {
 		last_update() {
-			// TODO
-			return null;
+			const last_update = store.state.last_update;
+
+			return last_update;
 		},
 	},
 
 	methods: {
-		updateLastUpdate() {
-			// TODO
+		updateLastUpdate(value) {
+			store.state.last_update = value;
 		},
 	},
 });

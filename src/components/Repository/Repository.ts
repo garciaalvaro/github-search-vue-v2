@@ -1,3 +1,4 @@
+import { store } from "@/store";
 import Vue from "vue";
 
 import IconStar from "./IconStar.vue";
@@ -7,55 +8,23 @@ interface Data {
 	styles: Record<string, string>;
 }
 
-export default Vue.extend<Data, unknown, unknown, Repository>({
+interface Props {
+	id: Repository["id"];
+}
+
+interface Computed {
+	repository: Repository;
+}
+
+export default Vue.extend<Data, unknown, Computed, Props>({
 	name: "Repository",
 
 	components: { IconStar },
 
 	props: {
 		id: {
-			type: String,
-			default: "",
-		},
-
-		url: {
-			type: String,
-			default: "",
-		},
-
-		description: {
-			type: String,
-			default: "",
-		},
-
-		name: {
-			type: String,
-			default: "",
-		},
-
-		user: {
-			type: String,
-			default: "",
-		},
-
-		stars: {
-			type: String,
-			default: "",
-		},
-
-		language: {
-			type: String,
-			default: "",
-		},
-
-		updated: {
-			type: String,
-			default: "",
-		},
-
-		license: {
-			type: String,
-			default: "",
+			type: Number,
+			default: 0,
 		},
 	},
 
@@ -63,5 +32,13 @@ export default Vue.extend<Data, unknown, unknown, Repository>({
 		return {
 			styles,
 		};
+	},
+
+	computed: {
+		repository() {
+			const repository = store.state.repositories[this.id];
+
+			return repository;
+		},
 	},
 });

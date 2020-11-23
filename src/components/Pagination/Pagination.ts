@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { store } from "@/store";
 import styles from "./Pagination.styl";
 
 interface Data {
@@ -8,12 +9,12 @@ interface Data {
 }
 
 interface Computed {
-	page: number;
-	repositories_found: number;
+	page: State["page"];
+	repositories_found: State["repositories_found"];
 }
 
 interface Methods {
-	updatePage: () => void;
+	updatePage: (value: number) => void;
 }
 
 export default Vue.extend<Data, Methods, Computed, unknown>({
@@ -28,19 +29,21 @@ export default Vue.extend<Data, Methods, Computed, unknown>({
 
 	computed: {
 		page() {
-			// TODO
-			return 1;
+			const page = store.state.page;
+
+			return page;
 		},
 
 		repositories_found() {
-			// TODO
-			return 0;
+			const repositories_found = store.state.repositories_found;
+
+			return repositories_found;
 		},
 	},
 
 	methods: {
-		updatePage() {
-			// TODO
+		updatePage(value) {
+			store.state.page = value;
 		},
 	},
 });

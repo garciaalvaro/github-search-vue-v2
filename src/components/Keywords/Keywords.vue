@@ -9,10 +9,10 @@
 				:value="keywords"
 				type="text"
 				placeholder="Search repositories..."
-				@change="updateKeywords"
+				@input="e => updateKeywords(e.target.value)"
 			/>
 
-			<button :class="styles.button" @click="fetchRespositories">
+			<button :class="styles.button" @click="fetchRepositories">
 				<IconSearch />
 			</button>
 		</div>

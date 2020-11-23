@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { store } from "@/store";
 import { Message } from "../Message";
 import { Repository as RepositoryComponent } from "../Repository";
 import { Pagination } from "../Pagination";
@@ -10,8 +11,8 @@ interface Data {
 }
 
 interface Computed {
-	repositories_ids: Repository["id"][];
-	text: string;
+	repositories_ids: State["repositories_ids"];
+	title: string;
 }
 
 export default Vue.extend<Data, unknown, Computed, unknown>({
@@ -27,13 +28,19 @@ export default Vue.extend<Data, unknown, Computed, unknown>({
 
 	computed: {
 		repositories_ids() {
-			// TODO
-			return [];
+			const repositories_ids = store.state.repositories_ids;
+
+			return repositories_ids;
 		},
 
-		text() {
-			// TODO
-			return "";
+		title() {
+			const { repositories_found } = store.state;
+
+			const title = `${repositories_found.toLocaleString()} repositor${
+				repositories_found > 1 ? "ies" : "y"
+			} found`;
+
+			return title;
 		},
 	},
 });

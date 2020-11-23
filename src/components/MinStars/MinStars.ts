@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import { store } from "@/store";
 import styles from "./MinStars.styl";
 
 interface Data {
@@ -8,11 +9,11 @@ interface Data {
 }
 
 interface Computed {
-	min_stars: MinStars | null;
+	min_stars: State["min_stars"];
 }
 
 interface Methods {
-	updateMinStars: () => void;
+	updateMinStars: (value: MinStars) => void;
 }
 
 export default Vue.extend<Data, Methods, Computed, unknown>({
@@ -31,14 +32,15 @@ export default Vue.extend<Data, Methods, Computed, unknown>({
 
 	computed: {
 		min_stars() {
-			// TODO
-			return null;
+			const min_stars = store.state.min_stars;
+
+			return min_stars;
 		},
 	},
 
 	methods: {
-		updateMinStars() {
-			// TODO
+		updateMinStars(value) {
+			store.state.min_stars = value;
 		},
 	},
 });

@@ -1,5 +1,6 @@
 import Vue, { PropType } from "vue";
 
+import { store } from "@/store";
 import styles from "./Language.styl";
 
 interface Data {
@@ -11,7 +12,7 @@ interface Props {
 }
 
 interface Methods {
-	updateLanguage: () => void;
+	updateLanguage: (value: Language) => void;
 }
 
 interface Computed {
@@ -36,14 +37,16 @@ export default Vue.extend<Data, Methods, Computed, Props>({
 
 	computed: {
 		is_active() {
-			// TODO
-			return false;
+			const is_active = store.state.language === this.language;
+
+			return is_active;
 		},
 	},
 
 	methods: {
 		updateLanguage() {
-			// TODO
+			store.state.language =
+				this.language === store.state.language ? null : this.language;
 		},
 	},
 });
