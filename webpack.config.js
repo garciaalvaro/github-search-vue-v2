@@ -109,15 +109,18 @@ module.exports = (env, { mode }) => {
 			}),
 		],
 
-		optimization: {
-			minimize: true,
-			minimizer: [
-				new CssMinimizerPlugin(),
+		...(is_development
+			? {}
+			: {
+					optimization: {
+						minimizer: [
+							new CssMinimizerPlugin(),
 
-				// As we are using a custom optimization, making use of
-				// CssMinimizerPlugin, we also need to specify TerserPlugin
-				new TerserPlugin({ extractComments: false }),
-			],
-		},
+							// As we are using a custom optimization, making use of
+							// CssMinimizerPlugin, we also need to specify TerserPlugin
+							new TerserPlugin({ extractComments: false }),
+						],
+					},
+			  }),
 	};
 };
