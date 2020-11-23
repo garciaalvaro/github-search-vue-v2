@@ -7,6 +7,7 @@
 		"prebuild": "npm run clean:dist && npm run test:types && npm run test:unit",
 		"build": "webpack --mode=production",
 		"clean:dist": "rm -rf dist",
+		"predev": "npm run clean:dist",
 		"dev": "webpack --mode=development & npm run serve:dev",
 		"test": "npm run test:types && npm run test:lint && npm run test:prettier",
 		"test:types": "tsc",
