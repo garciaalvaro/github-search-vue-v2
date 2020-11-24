@@ -1,5 +1,5 @@
 // Repository received from the API
-type RepositoryRaw = {
+interface RepositoryRaw {
 	id: number;
 	html_url: string;
 	description: string;
@@ -13,9 +13,9 @@ type RepositoryRaw = {
 	license: null | {
 		name: string;
 	};
-};
+}
 
-type Repository = {
+interface Repository {
 	id: number;
 	url: string;
 	description: string;
@@ -25,7 +25,7 @@ type Repository = {
 	language: string;
 	updated: string;
 	license: string;
-};
+}
 
 type MinStars = "10" | "100" | "1000" | "10000" | "50000" | "100000";
 
@@ -48,11 +48,5 @@ type Language =
 	| "Python"
 	| "PHP"
 	| "C#";
-
-type FetchedData = {
-	items: RepositoryRaw[];
-	total_count: number;
-	incomplete_results: boolean;
-};
 
 type Option = { value: string | number; label: string };
