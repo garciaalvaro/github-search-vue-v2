@@ -58,7 +58,7 @@ module.exports = (env, { mode }) => {
 								modules: {
 									localIdentName: is_development
 										? "[name]__[local]-[hash:base64:2]"
-										: "[hash:base64]",
+										: "[hash:base64:4]",
 								},
 							},
 						},
