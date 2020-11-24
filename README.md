@@ -6,13 +6,13 @@
 
 This project is a simple app that provides a UI to search GitHub repositories using the [GitHub Search API](https://developer.github.com/v3/search).
 
-There is also a implementation using [React](https://github.com/garciaalvaro/github-react), and another one using [Web Components](https://github.com/garciaalvaro/github-search).
+There is also an implementation using [React](https://github.com/garciaalvaro/github-react), and another one using [Web Components](https://github.com/garciaalvaro/github-search).
 
 - Built in **TypeScript** using **Vue.js**
-- It provides a server using **Node.js** and **Express** on port 4000
-- The CSS is built using **Stylus**
-- The **Webpack** bundler transforms the files and transpiles them using Babel, and other loaders and plugins
-- Code is linted using **eslint** and **prettier** for code format
+- Provides a server using **Express**
+- CSS pre-processed with **Stylus**
+- Bundled using **Webpack**
+- Code is linted using **eslint** and formatted using **prettier**
 
 ---
 
