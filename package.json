@@ -36,6 +36,7 @@
 		"@babel/runtime": "^7.12.5",
 		"@types/jest": "^26.0.15",
 		"babel-loader": "^8.2.1",
+		"core-js": "^3.7.0",
 		"css-loader": "^5.0.1",
 		"css-minimizer-webpack-plugin": "^1.1.5",
 		"dotenv": "^8.2.0",
