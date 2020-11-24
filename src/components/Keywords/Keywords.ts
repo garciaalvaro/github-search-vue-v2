@@ -2,6 +2,7 @@ import Vue from "vue";
 
 import { store } from "@/store";
 import IconSearch from "./IconSearch.vue";
+import colors from "../App/_colors.styl";
 import styles from "./Keywords.styl";
 
 interface Data {
@@ -24,7 +25,7 @@ export default Vue.extend<Data, Methods, Computed, unknown>({
 
 	data(): Data {
 		return {
-			styles,
+			styles: { ...styles, ...colors },
 		};
 	},
 

@@ -1,5 +1,6 @@
 import Vue from "vue";
 
+import colors from "../App/_colors.styl";
 import styles from "./Heading.styl";
 
 interface Data {
@@ -11,7 +12,7 @@ export default Vue.extend<Data, unknown, unknown, unknown>({
 
 	data(): Data {
 		return {
-			styles,
+			styles: { ...styles, ...colors },
 		};
 	},
 });
