@@ -29,7 +29,7 @@
 		"serve:dev": "pm2-dev start server.js",
 		"serve:docker": "pm2-runtime start server.js --name github-search-vue-v2",
 		"predeploy": "npm run build",
-		"deploy": "gh-pages -d dist"
+		"deploy": "USE_BASE_URL=\"yes\" gh-pages -d dist"
 	},
 	"dependencies": {
 		"@babel/core": "^7.13.15",

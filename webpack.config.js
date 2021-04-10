@@ -105,7 +105,10 @@ module.exports = (env, { mode }) => {
 			new HtmlWebpackPlugin({
 				template: path.resolve(__dirname, "src/assets/index.html"),
 				hash: true,
-				base: is_development ? false : process.env.HTML_BASE || false,
+				base:
+					process.env.USE_BASE_URL === "yes" && process.env.HTML_BASE
+						? process.env.HTML_BASE
+						: false,
 				favicon: path.resolve(__dirname, "src/assets/favicon.png"),
 			}),
 		],

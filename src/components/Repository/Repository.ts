@@ -1,5 +1,6 @@
-import { store } from "@/store";
 import Vue from "vue";
+
+import { store } from "@/store";
 
 import IconStar from "./IconStar.vue";
 import styles from "./Repository.styl";
