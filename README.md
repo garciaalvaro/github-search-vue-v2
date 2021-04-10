@@ -38,6 +38,7 @@ To stop the production server run `$ npm run serve:stop`
 ## Docker
 
 The project also comes with Docker configuration files, so it can be run using Docker. It uses the production version of the app. First it builds the scripts with Webpack, then it starts the pm2 server.
+
 - First make sure you have Docker installed
 - Run the command `$ npm run docker` which will download and install the dependencies and set up the container
 - Once finished, it will be available in http://localhost:3000
