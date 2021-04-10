@@ -25,7 +25,7 @@ From the root directory inside your terminal run `$ npm install`
 ### Development
 
 To start Webpack in watch mode and start the development server run `$ npm start`
-Once it is ready visit http://localhost:4000 in your browser
+Once it is ready visit http://localhost:3000 in your browser
 
 ### Production
 
@@ -40,7 +40,7 @@ To stop the production server run `$ npm run serve:stop`
 The project also comes with Docker configuration files, so it can be run using Docker. It uses the production version of the app. First it builds the scripts with Webpack, then it starts the pm2 server.
 - First make sure you have Docker installed
 - Run the command `$ npm run docker` which will download and install the dependencies and set up the container
-- Once finished, it will be available in http://localhost:4000
+- Once finished, it will be available in http://localhost:3000
 - To stop the container run the command: `$ npm run docker:stop`
 - If the container needs to be built again, run the command `$ npm run docker:recreate`
 
